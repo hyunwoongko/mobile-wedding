@@ -306,19 +306,19 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   right: 0;
   padding: 6px 0;
   text-align: center;
-  background: rgba(0,0,0,0.98);
+  background: #ecb3be;
   z-index: 2;
 }
 .parents-overlay .po-names {
   font-size: 14px;
-  color: #fff;
+  color: #000;
   letter-spacing: 1px;
   font-weight: 500;
   margin-bottom: 2px;
 }
 .parents-overlay .po-child {
   font-size: 12px;
-  color: rgba(255,255,255,0.9);
+  color: rgba(0,0,0,0.7);
   letter-spacing: 1px;
 }
 
