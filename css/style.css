@@ -60,7 +60,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 .cover {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 4.5;
   overflow: hidden;
 }
 .cover-photo {
