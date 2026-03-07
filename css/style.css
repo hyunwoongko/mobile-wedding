@@ -304,7 +304,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   top: 0;
   left: 0;
   right: 0;
-  padding: 6px 0;
+  padding: 10px 0;
   text-align: center;
   background: #ecb3be;
   z-index: 2;
