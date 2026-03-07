@@ -315,14 +315,14 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   z-index: 2;
 }
 .parents-overlay .po-names {
-  font-size: 17px;
+  font-size: 15px;
   color: rgba(0,0,0,0.55);
   letter-spacing: 2px;
   font-weight: 500;
   margin-bottom: 2px;
 }
 .parents-overlay .po-child {
-  font-size: 15px;
+  font-size: 18px;
   color: rgba(0,0,0,0.55);
   letter-spacing: 2px;
   font-weight: 500;
