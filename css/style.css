@@ -187,7 +187,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 
 /* --- Envelope --- */
 .envelope-wrap {
-  padding: 0 60px;
+  padding: 0 50px;
 }
 .envelope {
   position: relative;
