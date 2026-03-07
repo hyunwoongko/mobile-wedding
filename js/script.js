@@ -163,21 +163,29 @@ function initMusic() {
   btn.classList.add('show');
   let playing = false;
 
+  const iconOn = btn.querySelector('.icon-on');
+  const iconOff = btn.querySelector('.icon-off');
+
+  function updateIcon() {
+    iconOn.style.display = playing ? 'block' : 'none';
+    iconOff.style.display = playing ? 'none' : 'block';
+    btn.style.opacity = playing ? '1' : '0.5';
+  }
+
   btn.addEventListener('click', () => {
     if (playing) {
       audio.pause();
-      btn.style.opacity = '0.5';
     } else {
       audio.play();
-      btn.style.opacity = '1';
     }
     playing = !playing;
+    updateIcon();
   });
 
   const autoPlay = () => {
     audio.play().then(() => {
       playing = true;
-      btn.style.opacity = '1';
+      updateIcon();
     }).catch(() => {});
   };
   document.addEventListener('touchstart', autoPlay, { once: true });
