@@ -301,7 +301,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 }
 .parents-overlay {
   position: absolute;
-  top: 12px;
+  top: 0;
   left: 0;
   right: 0;
   padding: 6px 0;
