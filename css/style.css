@@ -281,7 +281,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 }
 .text-center-dark {
   text-align: center;
-  padding: 0 32px 8px;
+  padding: 0 32px 0;
 }
 .text-center-dark p {
   font-size: 14px;
