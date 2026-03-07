@@ -623,7 +623,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 /* === TOAST === */
 .toast {
   position: fixed; bottom: 40px; left: 50%;
-  transform: translateX(-50%) translateY(80px);
+  transform: translateX(-50%) translateY(200px);
   background: rgba(0,0,0,0.85); color: #fff;
   padding: 12px 28px; border-radius: 25px; font-size: 14px;
   z-index: 9999; transition: transform 0.35s ease;
