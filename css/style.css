@@ -12,7 +12,7 @@ body {
   font-family: 'Montserrat', 'Pretendard', sans-serif;
   color: #333;
   background: #000;
-  line-height: 1.3;
+  line-height: 1.6;
   letter-spacing: -0.2px;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -169,7 +169,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 }
 .text-center-white p {
   color: rgba(255,255,255,0.9);
-  line-height: 2;
+  line-height: 1.6;
   font-weight: 400;
 }
 .tcw-date {
@@ -187,7 +187,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 
 /* --- Envelope --- */
 .envelope-wrap {
-  padding: 0 32px;
+  padding: 0 60px;
 }
 .envelope {
   position: relative;
@@ -272,7 +272,6 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 .groom-bride {
   text-align: center;
   padding: 0 32px;
-  line-height: 1.5;
 }
 .gb-label {
   font-family: 'Montserrat', 'Pretendard', sans-serif;
@@ -317,10 +316,10 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 }
 .parents-overlay {
   position: absolute;
-  top: 0;
+  top: -10px;
   left: 0;
   right: 0;
-  padding: 10px 0;
+  padding: 6px 0;
   text-align: center;
   background: #ecb3be;
   z-index: 2;
