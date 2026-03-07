@@ -376,7 +376,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 .photo-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.5px;
+  gap: 0.2px;
   background: #c4b5a0;
 }
 .gi { overflow: hidden; }
