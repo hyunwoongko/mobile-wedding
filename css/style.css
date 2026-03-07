@@ -9,7 +9,7 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { font-size: 16px; -webkit-text-size-adjust: 100%; }
 body {
-  font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'Montserrat', 'Pretendard', sans-serif;
   color: #333;
   background: #000;
   line-height: 1.3;
@@ -95,7 +95,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   align-items: center;
 }
 .cover-invited {
-  font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'Montserrat', 'Pretendard', sans-serif;
   font-size: 13px;
   font-weight: 400;
   color: rgba(255,255,255,0.5);
@@ -208,7 +208,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   pointer-events: none;
 }
 .env-invited {
-  font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'Montserrat', 'Pretendard', sans-serif;
   font-size: 10px;
   color: #555;
   letter-spacing: 3px;
@@ -231,7 +231,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 .env-left, .env-right { text-align: left; }
 .env-right { text-align: right; }
 .env-date {
-  font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'Montserrat', 'Pretendard', sans-serif;
   font-size: 12px;
   font-weight: 600;
   color: #000;
@@ -239,7 +239,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   line-height: 1.2;
 }
 .env-day {
-  font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'Montserrat', 'Pretendard', sans-serif;
   font-size: 11px;
   color: #333;
   letter-spacing: 1px;
@@ -263,14 +263,14 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   padding: 0 32px;
 }
 .gb-label {
-  font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'Montserrat', 'Pretendard', sans-serif;
   font-size: 16px;
   color: rgba(255,255,255,0.85);
   letter-spacing: 0.5px;
   font-weight: 700;
 }
 .gb-name {
-  font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'Montserrat', 'Pretendard', sans-serif;
   font-size: 20px;
   color: #fff;
   letter-spacing: 0.5px;
@@ -406,14 +406,14 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   margin-bottom: 24px;
 }
 .cal-date {
-  font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'Montserrat', 'Pretendard', sans-serif;
   font-size: 22px;
   font-weight: 700;
   color: #000;
   letter-spacing: 2px;
 }
 .cal-time {
-  font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'Montserrat', 'Pretendard', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: #000;
@@ -427,7 +427,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   color: #000;
 }
 .calendar-table th {
-  font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'Montserrat', 'Pretendard', sans-serif;
   font-size: 12px;
   font-weight: 500;
   color: rgba(0,0,0,0.6);
