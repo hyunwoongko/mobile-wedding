@@ -95,7 +95,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   align-items: center;
 }
 .cover-invited {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Montserrat', 'Pretendard', sans-serif;
   font-size: 13px;
   font-weight: 400;
   color: rgba(255,255,255,0.5);
