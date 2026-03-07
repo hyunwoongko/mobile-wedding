@@ -303,11 +303,10 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   position: absolute;
   top: 12px;
   left: 0;
-  padding: 6px 20px 6px 75px;
-  text-align: left;
+  right: 0;
+  padding: 6px 0;
+  text-align: center;
   background: rgba(0,0,0,0.9);
-  border-radius: 0 4px 4px 0;
-  white-space: nowrap;
   z-index: 2;
 }
 .parents-overlay .po-names {
