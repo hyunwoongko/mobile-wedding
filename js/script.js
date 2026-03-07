@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCalendar();
   initImageModal();
   initMusic();
-  initMap();
+  // Map is now embedded via iframe
   initKakao();
 });
 
