@@ -55,7 +55,7 @@ const CONFIG = {
   },
 
   music: {
-    enabled: false,
+    enabled: true,
     src: "assets/bgm.mp3",
   },
 };
