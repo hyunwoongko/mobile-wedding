@@ -2,7 +2,7 @@
    모바일 청첩장 - 원본 pixel-perfect 재현
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Lora:wght@300;400;500;600&display=swap');
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
 /* === RESET === */
@@ -108,10 +108,10 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 }
 .cover-invited {
   font-family: 'Lora', serif;
-  font-size: 17px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 300;
   color: #ed7a8c;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 18px;
 }
@@ -158,14 +158,14 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   color: #ed7a8c;
   letter-spacing: 1px;
   margin-bottom: 4px;
-  font-weight: 600;
+  font-weight: 300;
 }
 .cover-venue {
   font-family: 'Lora', serif;
   font-size: 22px;
   color: #ed7a8c;
   letter-spacing: 0.5px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 /* --- Save The Date badge --- */
@@ -222,9 +222,10 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 }
 .env-invited {
   font-family: 'Lora', serif;
-  font-size: 10px;
+  font-size: 9px;
+  font-weight: 300;
   color: #555;
-  letter-spacing: 3px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
@@ -246,7 +247,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 .env-date {
   font-family: 'Lora', serif;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 300;
   color: #000;
   letter-spacing: 1px;
   line-height: 1.2;
@@ -254,6 +255,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 .env-day {
   font-family: 'Lora', serif;
   font-size: 11px;
+  font-weight: 300;
   color: #333;
   letter-spacing: 1px;
   line-height: 1.2;
@@ -261,6 +263,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 .env-venue1 {
   font-family: 'Lora', serif;
   font-size: 11px;
+  font-weight: 300;
   color: #333;
   letter-spacing: 0.5px;
   line-height: 1.5;
