@@ -651,7 +651,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 
 /* === IMAGE MODAL === */
 .img-modal {
-  position: fixed; inset: 0; background: rgba(0,0,0,0.96);
+  position: fixed; inset: 0; background: rgba(0,0,0,0.9);
   z-index: 9998; display: none; align-items: center; justify-content: center; padding: 16px;
 }
 .img-modal.open { display: flex; }
