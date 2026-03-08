@@ -188,8 +188,14 @@ function initMusic() {
       updateIcon();
     }).catch(() => {});
   };
+
+  // Try immediate autoplay first
+  autoPlay();
+
+  // Fallback: play on first user interaction
   document.addEventListener('touchstart', autoPlay, { once: true });
   document.addEventListener('click', autoPlay, { once: true });
+  document.addEventListener('scroll', autoPlay, { once: true });
 }
 
 // ============================================
