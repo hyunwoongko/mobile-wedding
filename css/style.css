@@ -346,16 +346,20 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
    SECTION 3: WEDDING DAY
    ============================================ */
 .sec-weddingday {
-  background: #ecb3be;
+  background: #000;
 }
 
 .video-area {
-  padding: 0 28px;
+  padding: 0 30px;
 }
 .video-wrap {
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
+}
+.video-iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border: none;
 }
 .video-thumb {
   width: 100%;
