@@ -203,7 +203,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 }
 .envelope {
   position: relative;
-  background: #d0cdc8;
+  background: #888580;
   padding: 40px 24px 24px;
   text-align: center;
   overflow: hidden;
