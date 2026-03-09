@@ -270,9 +270,16 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 }
 
 /* --- Greeting image --- */
+.greeting-wrap {
+  overflow: hidden;
+}
 .greeting-img {
-  max-width: 80%;
-  margin: 0 auto 20px;
+  display: block;
+  width: 150% !important;
+  max-width: none !important;
+  margin-left: -25%;
+  margin-top: -20%;
+  margin-bottom: -25%;
 }
 
 /* --- Groom / Bride (Cormorant Garamond) --- */
