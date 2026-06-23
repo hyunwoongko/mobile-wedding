@@ -7,8 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
   initImageModal();
   initMusic();
+  document.body.style.overflow = 'hidden';
   window.addEventListener('load', function() {
-    setTimeout(initScrollAnimations, 500);
+    setTimeout(function() {
+      document.body.style.overflow = '';
+      initScrollAnimations();
+    }, 500);
   });
   // Map is now embedded via iframe
   initKakao();
