@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
   initImageModal();
   initMusic();
-  setTimeout(initScrollAnimations, 2300);
+  window.addEventListener('load', function() {
+    setTimeout(initScrollAnimations, 500);
+  });
   // Map is now embedded via iframe
   initKakao();
 });
