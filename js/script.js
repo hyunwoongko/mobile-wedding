@@ -229,9 +229,10 @@ function initImageModal() {
       modalImg.src = allImages[idx].getAttribute('data-full') || allImages[idx].src;
       modalImg.style.opacity = '1';
     }, 150);
-    thumbEls.forEach((t, i) => t.classList.toggle('active', i === idx));
-    // Scroll active thumb into view
-    thumbEls[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    thumbEls.forEach((t, i) => {
+      t.classList.toggle('active', i === idx);
+      t.style.display = (i >= idx - 2 && i <= idx + 2) ? '' : 'none';
+    });
   }
 
   // Gallery grid images
@@ -240,8 +241,10 @@ function initImageModal() {
       currentIdx = i;
       modalImg.style.opacity = '1';
       modalImg.src = allImages[i].getAttribute('data-full') || allImages[i].src;
-      thumbEls.forEach((t, j) => t.classList.toggle('active', j === i));
-      thumbEls[i].scrollIntoView({ inline: 'center', block: 'nearest' });
+      thumbEls.forEach((t, j) => {
+        t.classList.toggle('active', j === i);
+        t.style.display = (j >= i - 2 && j <= i + 2) ? '' : 'none';
+      });
       modal.classList.add('open');
       document.body.style.overflow = 'hidden';
       var bgmBtn = document.getElementById('bgm-btn');
