@@ -29,7 +29,7 @@
 
     <!-- Cover: photo + text overlay (movie poster ratio) -->
     <div class="cover">
-      <img src="images/couple-night2.jpg" alt="" class="cover-photo">
+      <img src="images/cover.jpg" alt="" class="cover-photo">
       <div class="cover-overlay">
         <div class="cover-top">
           <p class="cover-invited">YOU'RE INVITED TO</p>
@@ -52,158 +52,27 @@
       </div>
     </div>
 
-    <!-- 79px -->
-    <div class="spacer" style="height:79px"></div>
-
-    <!-- Save The Date badge -->
-    <div class="img-center">
-      <img src="images/badge-savethedate.png" alt="Save The Date" class="badge-std">
-    </div>
-
     <!-- 20px -->
     <div class="spacer" style="height:20px"></div>
-
-    <!-- Date / Venue / Address (bold) -->
-    <div class="text-center-white">
-      <p class="tcw-date">2026.08.22 SAT 02:00PM</p>
-      <p class="tcw-venue">르비르모어</p>
-      <p class="tcw-addr">서울시 강남구 테헤란로 406 (선릉역)</p>
-    </div>
-
-    <!-- 68px -->
-    <div class="spacer" style="height:68px"></div>
-
-    <!-- Envelope "Our Wedding" -->
-    <div class="envelope-wrap">
-      <div class="envelope">
-        <svg class="envelope-svg" viewBox="0 0 300 200" preserveAspectRatio="none">
-          <defs>
-            <filter id="paper">
-              <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="6" result="noise" />
-              <feDiffuseLighting in="noise" lighting-color="white" surfaceScale="3" result="light">
-                <feDistantLight azimuth="135" elevation="50" />
-              </feDiffuseLighting>
-              <feComposite in="SourceGraphic" in2="light" operator="arithmetic" k1="0" k2="1" k3="0.3" k4="0" />
-            </filter>
-            <!-- 상단 접힘선 그림자 (위쪽으로) -->
-            <filter id="shadow-top" x="-20%" y="-50%" width="140%" height="200%">
-              <feDropShadow dx="0" dy="-12" stdDeviation="12" flood-color="rgba(0,0,0,0.25)" />
-            </filter>
-            <!-- 하단 접힘선 그림자 (아래쪽으로) -->
-            <filter id="shadow-bottom" x="-20%" y="-20%" width="140%" height="200%">
-              <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="rgba(0,0,0,0.4)" />
-            </filter>
-            <!-- 하단 플랩 클리핑: 상단 플랩 영역 제외 -->
-            <clipPath id="clip-bottom">
-              <polygon points="0,0 150,150 300,0 300,200 0,200" />
-            </clipPath>
-          </defs>
-          <!-- 종이 질감 -->
-          <rect width="300" height="200" fill="#dddad6" filter="url(#paper)" opacity="0.55" />
-          <!-- 하단 플랩 (역V자) - 상단 플랩 영역에서 잘림 -->
-          <g clip-path="url(#clip-bottom)">
-            <polygon points="0,200 150,50 300,200" fill="rgba(255,255,255,0.12)" />
-            <line x1="1.2" y1="199" x2="151.2" y2="49" stroke="rgba(255,255,255,0.65)" stroke-width="0.7" />
-            <line x1="0.6" y1="199.5" x2="150.6" y2="49.5" stroke="rgba(255,255,255,0.85)" stroke-width="0.7" />
-            <line x1="0" y1="200" x2="150" y2="50" stroke="rgba(255,255,255,1)" stroke-width="0.7" filter="url(#shadow-bottom)" />
-            <line x1="298.8" y1="199" x2="148.8" y2="49" stroke="rgba(255,255,255,0.65)" stroke-width="0.7" />
-            <line x1="299.4" y1="199.5" x2="149.4" y2="49.5" stroke="rgba(255,255,255,0.85)" stroke-width="0.7" />
-            <line x1="300" y1="200" x2="150" y2="50" stroke="rgba(255,255,255,1)" stroke-width="0.7" filter="url(#shadow-bottom)" />
-          </g>
-          <!-- 상단 플랩 (V자) - 위에 덮음 -->
-          <polygon points="0,0 150,150 300,0" fill="rgba(255,255,255,0.25)" />
-          <!-- 상단 접힘선 - 중심선 + 양옆 페이드 -->
-          <line x1="1.2" y1="0" x2="150" y2="150" stroke="rgba(0,0,0,0.05)" stroke-width="0.7" />
-          <line x1="0.6" y1="0" x2="150" y2="150" stroke="rgba(0,0,0,0.09)" stroke-width="0.7" />
-          <line x1="0" y1="0" x2="150" y2="150" stroke="rgba(0,0,0,0.15)" stroke-width="0.7" filter="url(#shadow-top)" />
-          <line x1="298.8" y1="0" x2="150" y2="150" stroke="rgba(0,0,0,0.05)" stroke-width="0.7" />
-          <line x1="299.4" y1="0" x2="150" y2="150" stroke="rgba(0,0,0,0.09)" stroke-width="0.7" />
-          <line x1="300" y1="0" x2="150" y2="150" stroke="rgba(0,0,0,0.15)" stroke-width="0.7" filter="url(#shadow-top)" />
-        </svg>
-        <p class="env-invited">YOU'RE INVITED TO</p>
-        <p class="env-title">Our Wedding</p>
-        <div class="env-bottom">
-          <div class="env-left">
-            <p class="env-date">2026.08.22 SAT</p>
-          </div>
-          <div class="env-right">
-            <p class="env-venue1">Le Vire Moire</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 69px -->
-    <div class="spacer" style="height:69px"></div>
 
     <!-- Greeting text (image) -->
     <div class="img-center greeting-wrap">
       <img src="assets/handwriting_senny.png" alt="" class="img-orgsize greeting-img">
     </div>
 
-    <!-- 54px -->
-    <div class="spacer" style="height:54px"></div>
+    <!-- 20px -->
+    <div class="spacer" style="height:20px"></div>
 
-    <!-- Groom & Bride (Cormorant Garamond, bold labels) -->
-    <div class="groom-bride">
-      <p class="gb-label">Groom</p>
-      <p class="gb-name">Hyun Woong Ko</p>
-      <br>
-      <p class="gb-label">Bride</p>
-      <p class="gb-name">Se Eun Park</p>
+    <!-- 갤러리 badge -->
+    <div class="img-center">
+      <svg class="badge-std" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="180" cy="60" rx="175" ry="56" fill="#b5c26a"/>
+        <ellipse cx="180" cy="60" rx="158" ry="46" fill="none" stroke="#5a6e2e" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="180" y="70" text-anchor="middle" font-family="'Pretendard', sans-serif" font-size="32" font-weight="700" fill="#000">갤러리</text>
+      </svg>
     </div>
 
-    <!-- 53px -->
-    <div class="spacer" style="height:53px"></div>
-
-    <!-- Second couple photo -->
-    <div class="full-image couple2-wrap">
-      <img src="images/couple2.png" alt="">
-    </div>
-
-  </section>
-
-  <!-- =============================================
-       SECTION 2: PARENTS (#ecb3be)
-       ============================================= -->
-  <section class="sec-parents">
-
-    <!-- 66px -->
-    <div class="spacer" style="height:66px"></div>
-
-    <!-- Groom parents photo with name overlay -->
-    <div class="parents-card-wrap">
-      <img src="images/groom-parents.png" alt="신랑측 혼주">
-      <div class="parents-overlay">
-        <p class="po-child"><strong>현웅의 부모</strong></p>
-        <p class="po-names">고성주 &amp; 박명옥</p>
-      </div>
-    </div>
-
-    <!-- 47px -->
-    <div class="spacer" style="height:47px"></div>
-
-    <!-- Bride parents photo with name overlay -->
-    <div class="parents-card-wrap">
-      <img src="images/bride-parents.png" alt="신부측 혼주">
-      <div class="parents-overlay">
-        <p class="po-child"><strong>세은의 부모</strong></p>
-        <p class="po-names">故 박정호 &amp; 임순주</p>
-      </div>
-    </div>
-
-    <!-- 60px -->
-    <div class="spacer" style="height:60px"></div>
-
-  </section>
-
-  <!-- =============================================
-       SECTION 3: VIDEO + STORY
-       ============================================= -->
-  <section class="sec-weddingday">
-
-    <!-- 80px -->
-    <div class="spacer" style="height:80px"></div>
+    <div class="spacer" style="height:30px"></div>
 
     <!-- Video -->
     <div class="video-area">
@@ -212,16 +81,6 @@
       </div>
     </div>
 
-    <!-- 80px -->
-    <div class="spacer" style="height:80px"></div>
-
-  </section>
-
-  <!-- Story images -->
-  <section class="sec-story">
-    <div class="full-image"><img src="images/story1.png" alt=""></div>
-    <div class="full-image"><img src="images/story2.png" alt=""></div>
-    <div class="full-image"><img src="images/story3.jpg" alt=""></div>
   </section>
 
   <!-- =============================================
@@ -230,18 +89,24 @@
   <section class="sec-photos">
 
     <div class="photo-grid">
-      <div class="gi"><img src="images/grid1.jpg" alt="" data-full="images/grid1.jpg"></div>
-      <div class="gi"><img src="images/grid2.jpg" alt="" data-full="images/grid2.jpg"></div>
-      <div class="gi"><img src="images/grid3.jpg" alt="" data-full="images/grid3.jpg"></div>
-      <div class="gi"><img src="images/sample_04.jpg" alt="" data-full="images/sample_04.jpg"></div>
-      <div class="gi"><img src="images/sample_05.jpg" alt="" data-full="images/sample_05.jpg"></div>
-      <div class="gi"><img src="images/sample_06.jpg" alt="" data-full="images/sample_06.jpg"></div>
-      <div class="gi"><img src="images/grid4.jpg" alt="" data-full="images/grid4.jpg"></div>
-      <div class="gi"><img src="images/sample_07.jpg" alt="" data-full="images/sample_07.jpg"></div>
-      <div class="gi"><img src="images/grid5.jpg" alt="" data-full="images/grid5.jpg"></div>
-      <div class="gi"><img src="images/grid6.jpg" alt="" data-full="images/grid6.jpg"></div>
-      <div class="gi"><img src="images/grid7.jpg" alt="" data-full="images/grid7.jpg"></div>
-      <div class="gi"><img src="images/sample_09.jpg" alt="" data-full="images/sample_09.jpg"></div>
+      <div class="gi"><img src="images/wedding_01.jpg" alt="" data-full="images/wedding_01.jpg"></div>
+      <div class="gi"><img src="images/wedding_02.jpg" alt="" data-full="images/wedding_02.jpg"></div>
+      <div class="gi"><img src="images/wedding_03.jpg" alt="" data-full="images/wedding_03.jpg"></div>
+      <div class="gi"><img src="images/wedding_04.jpg" alt="" data-full="images/wedding_04.jpg"></div>
+      <div class="gi"><img src="images/wedding_05.jpg" alt="" data-full="images/wedding_05.jpg"></div>
+      <div class="gi"><img src="images/wedding_06.jpg" alt="" data-full="images/wedding_06.jpg"></div>
+      <div class="gi"><img src="images/wedding_07.jpg" alt="" data-full="images/wedding_07.jpg"></div>
+      <div class="gi"><img src="images/wedding_08.jpg" alt="" data-full="images/wedding_08.jpg"></div>
+      <div class="gi"><img src="images/wedding_09.jpg" alt="" data-full="images/wedding_09.jpg"></div>
+      <div class="gi"><img src="images/wedding_10.jpg" alt="" data-full="images/wedding_10.jpg"></div>
+      <div class="gi"><img src="images/wedding_11.jpg" alt="" data-full="images/wedding_11.jpg"></div>
+      <div class="gi"><img src="images/wedding_12.jpg" alt="" data-full="images/wedding_12.jpg"></div>
+      <div class="gi"><img src="images/wedding_13.jpg" alt="" data-full="images/wedding_13.jpg"></div>
+      <div class="gi"><img src="images/wedding_14.jpg" alt="" data-full="images/wedding_14.jpg"></div>
+      <div class="gi"><img src="images/wedding_15.jpg" alt="" data-full="images/wedding_15.jpg"></div>
+      <div class="gi"><img src="images/wedding_16.jpg" alt="" data-full="images/wedding_16.jpg"></div>
+      <div class="gi"><img src="images/wedding_17.jpg" alt="" data-full="images/wedding_17.jpg"></div>
+      <div class="gi"><img src="images/wedding_18.jpg" alt="" data-full="images/wedding_18.jpg"></div>
     </div>
 
     <!-- Calendar -->
@@ -272,7 +137,11 @@
 
     <!-- 오시는 길 badge -->
     <div class="img-center">
-      <img src="images/badge-location.png" alt="오시는 길" class="badge-loc">
+      <svg class="badge-loc" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="180" cy="60" rx="175" ry="56" fill="#b5c26a"/>
+        <ellipse cx="180" cy="60" rx="158" ry="46" fill="none" stroke="#5a6e2e" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="180" y="70" text-anchor="middle" font-family="'Pretendard', sans-serif" font-size="32" font-weight="700" fill="#000">오시는 길</text>
+      </svg>
     </div>
 
     <!-- 27px -->
@@ -288,8 +157,7 @@
 
     <!-- Address + copy -->
     <div class="addr-copy">
-      <p class="addr-main">서울시 강남구 테헤란로 406</p>
-      <p class="addr-venue">르비르모어</p>
+      <p class="addr-main">서울시 강남구 테헤란로 406 <strong>르비르모어</strong></p>
       <button class="btn-addr-copy" onclick="copyText('서울시 강남구 테헤란로 406 르비르모어')">복사하기</button>
     </div>
 
@@ -335,7 +203,11 @@
 
     <!-- 마음 전하실 곳 badge -->
     <div class="img-center">
-      <img src="images/badge-account.png" alt="마음 전하실 곳" class="badge-acc">
+      <svg class="badge-acc" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="180" cy="60" rx="175" ry="56" fill="#b5c26a"/>
+        <ellipse cx="180" cy="60" rx="158" ry="46" fill="none" stroke="#5a6e2e" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="180" y="70" text-anchor="middle" font-family="'Pretendard', sans-serif" font-size="32" font-weight="700" fill="#000">마음 전하실 곳</text>
+      </svg>
     </div>
 
     <!-- 28px -->
@@ -347,17 +219,17 @@
         <h6 class="acc-title">🤵🏻‍♂️ 신랑측 계좌번호</h6>
         <div class="acc-row">
           <div class="acc-info">
-            <p class="acc-num">국민은행 000000-00-000000</p>
+            <p class="acc-num">농협은행 527031-52-076081</p>
             <p class="acc-holder">고성주</p>
           </div>
-          <button class="btn-copy-acc" onclick="copyAccount('00000000000000')">복사하기</button>
+          <button class="btn-copy-acc" onclick="copyAccount('52703152076081')">복사하기</button>
         </div>
         <div class="acc-row">
           <div class="acc-info">
-            <p class="acc-num">카카오뱅크 0000-00-0000000</p>
+            <p class="acc-num">국민은행 759301-01-575402</p>
             <p class="acc-holder">고현웅</p>
           </div>
-          <button class="btn-copy-acc" onclick="copyAccount('000000000000')">복사하기</button>
+          <button class="btn-copy-acc" onclick="copyAccount('75930101575402')">복사하기</button>
         </div>
       </div>
 
@@ -365,17 +237,17 @@
         <h6 class="acc-title">👰🏻‍♀️ 신부측 계좌번호</h6>
         <div class="acc-row">
           <div class="acc-info">
-            <p class="acc-num">국민은행 000000-00-000000</p>
+            <p class="acc-num">신한은행 110-513-579141</p>
             <p class="acc-holder">임순주</p>
           </div>
-          <button class="btn-copy-acc" onclick="copyAccount('00000000000000')">복사하기</button>
+          <button class="btn-copy-acc" onclick="copyAccount('110513579141')">복사하기</button>
         </div>
         <div class="acc-row">
           <div class="acc-info">
-            <p class="acc-num">카카오뱅크 0000-00-0000000</p>
+            <p class="acc-num">국민은행 448601-01-558350</p>
             <p class="acc-holder">박세은</p>
           </div>
-          <button class="btn-copy-acc" onclick="copyAccount('000000000000')">복사하기</button>
+          <button class="btn-copy-acc" onclick="copyAccount('44860101558350')">복사하기</button>
         </div>
       </div>
     </div>
@@ -386,7 +258,6 @@
     <div class="share-footer-wrap">
       <!-- Share buttons -->
       <div class="share-area">
-        <button class="btn-kakao" onclick="shareKakao()">카카오톡 공유하기</button>
         <button class="btn-urlcopy" onclick="copyURL()">청첩장 주소 복사하기</button>
       </div>
 
