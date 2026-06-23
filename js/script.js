@@ -130,6 +130,8 @@ function initImageModal() {
       modalImg.src = fullSrc;
       modal.classList.add('open');
       document.body.style.overflow = 'hidden';
+      var bgmBtn = document.getElementById('bgm-btn');
+      if (bgmBtn) bgmBtn.style.display = 'none';
     });
   });
 
@@ -146,6 +148,8 @@ function closeImgModal() {
   if (modal) {
     modal.classList.remove('open');
     document.body.style.overflow = '';
+    var bgmBtn = document.getElementById('bgm-btn');
+    if (bgmBtn) bgmBtn.style.display = 'flex';
   }
 }
 
