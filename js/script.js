@@ -202,17 +202,50 @@ function initImageModal() {
   if (!modal) return;
 
   const modalImg = modal.querySelector('img');
+  const allImages = Array.from(document.querySelectorAll('.photo-grid .gi img'));
+  var currentIdx = 0;
+
+  function showImage(idx) {
+    if (idx < 0) idx = allImages.length - 1;
+    if (idx >= allImages.length) idx = 0;
+    currentIdx = idx;
+    var src = allImages[idx].getAttribute('data-full') || allImages[idx].src;
+    modalImg.src = src;
+  }
 
   // Gallery grid images
-  document.querySelectorAll('.photo-grid .gi img').forEach(img => {
+  allImages.forEach((img, i) => {
     img.addEventListener('click', () => {
-      const fullSrc = img.getAttribute('data-full') || img.src;
-      modalImg.src = fullSrc;
+      currentIdx = i;
+      showImage(i);
       modal.classList.add('open');
       document.body.style.overflow = 'hidden';
       var bgmBtn = document.getElementById('bgm-btn');
       if (bgmBtn) bgmBtn.style.display = 'none';
     });
+  });
+
+  // Prev / Next buttons
+  document.getElementById('img-prev').addEventListener('click', (e) => {
+    e.stopPropagation();
+    showImage(currentIdx - 1);
+  });
+  document.getElementById('img-next').addEventListener('click', (e) => {
+    e.stopPropagation();
+    showImage(currentIdx + 1);
+  });
+
+  // Swipe support
+  var touchStartX = 0;
+  modal.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+  modal.addEventListener('touchend', (e) => {
+    var diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) showImage(currentIdx + 1);
+      else showImage(currentIdx - 1);
+    }
   });
 
   // Close on click background or close button
