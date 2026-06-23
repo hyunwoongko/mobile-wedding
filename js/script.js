@@ -129,7 +129,7 @@ function initScrollAnimations() {
         animObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.02 });
 
   animEls.forEach(function(el) {
     animObserver.observe(el);
