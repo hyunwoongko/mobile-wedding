@@ -658,6 +658,14 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   padding: 16px;
   background: rgba(255,255,255,0.7);
   border-radius: 8px;
+  position: relative;
+}
+.gb-item-delete {
+  position: absolute;
+  top: 10px; right: 12px;
+  background: none; border: none;
+  font-size: 18px; color: #bbb;
+  cursor: pointer; padding: 0; line-height: 1;
 }
 .gb-item-msg {
   font-family: 'Pretendard', sans-serif;

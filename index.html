@@ -318,6 +318,20 @@
 <!-- Toast -->
 <div class="toast" id="toast"></div>
 
+<!-- Guestbook Delete Modal -->
+<div class="gb-modal" id="gb-delete-modal">
+  <div class="gb-modal-content">
+    <button class="gb-modal-close" onclick="document.getElementById('gb-delete-modal').classList.remove('open')">&times;</button>
+    <p class="gb-modal-title">메시지 삭제</p>
+    <p class="gb-modal-subtitle">작성 시 입력한 비밀번호를 입력해 주세요</p>
+    <form id="gb-delete-form" class="gb-modal-form">
+      <input type="hidden" id="gb-delete-id">
+      <input type="password" id="gb-delete-pw" placeholder="비밀번호를 입력해 주세요" required>
+      <button type="submit" class="gb-modal-submit">삭제하기</button>
+    </form>
+  </div>
+</div>
+
 <!-- Guestbook Modal -->
 <div class="gb-modal" id="gb-modal">
   <div class="gb-modal-content">
@@ -345,7 +359,7 @@
 <!-- Firebase SDK -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+  import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp, doc, getDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyDI5R0nF1loKyihHahgLttlIgcfu8o5YmY",
@@ -380,6 +394,21 @@
     document.getElementById('gb-modal').classList.remove('open');
   });
 
+  // Delete
+  document.getElementById('gb-delete-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const docId = document.getElementById('gb-delete-id').value;
+    const pw = document.getElementById('gb-delete-pw').value;
+    const docRef = doc(db, 'guestbook', docId);
+    const snap = await getDoc(docRef);
+    if (snap.exists() && snap.data().password === pw) {
+      await deleteDoc(docRef);
+      document.getElementById('gb-delete-modal').classList.remove('open');
+    } else {
+      alert('비밀번호가 일치하지 않습니다.');
+    }
+  });
+
   // Listen
   const q = query(collection(db, 'guestbook'), orderBy('createdAt', 'desc'));
   onSnapshot(q, (snapshot) => {
@@ -391,7 +420,14 @@
       const dateStr = date.getFullYear() + '.' + String(date.getMonth()+1).padStart(2,'0') + '.' + String(date.getDate()).padStart(2,'0') + ' ' + String(date.getHours()).padStart(2,'0') + ':' + String(date.getMinutes()).padStart(2,'0');
       const item = document.createElement('div');
       item.className = 'gb-item';
-      item.innerHTML = '<p class="gb-item-msg">' + d.message.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</p><div class="gb-item-footer"><span class="gb-item-name">From. ' + d.name.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</span><span class="gb-item-date">' + dateStr + '</span></div>';
+      var docId = doc.id;
+      var pwd = d.password;
+      item.innerHTML = '<button class="gb-item-delete" data-id="' + docId + '">&times;</button><p class="gb-item-msg">' + d.message.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</p><div class="gb-item-footer"><span class="gb-item-name">From. ' + d.name.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</span><span class="gb-item-date">' + dateStr + '</span></div>';
+      item.querySelector('.gb-item-delete').addEventListener('click', function() {
+        document.getElementById('gb-delete-id').value = docId;
+        document.getElementById('gb-delete-pw').value = '';
+        document.getElementById('gb-delete-modal').classList.add('open');
+      });
       list.appendChild(item);
     });
   });
