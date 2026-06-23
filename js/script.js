@@ -4,8 +4,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initCalendar();
+  initCountdown();
   initImageModal();
   initMusic();
+  setTimeout(initScrollAnimations, 2300);
   // Map is now embedded via iframe
   initKakao();
 });
@@ -112,6 +114,78 @@ function showToast(msg) {
   toast.textContent = msg;
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+// ============================================
+// Scroll Animations
+// ============================================
+function initScrollAnimations() {
+  // Fade-in / slide-up elements
+  var animEls = document.querySelectorAll('.anim');
+  var animObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        animObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  animEls.forEach(function(el) {
+    animObserver.observe(el);
+  });
+
+  // Stagger gallery photos
+  var grids = document.querySelectorAll('.anim-stagger');
+  grids.forEach(function(grid) {
+    var items = grid.querySelectorAll('.gi');
+    var gridObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var idx = Array.prototype.indexOf.call(items, entry.target);
+          entry.target.style.transitionDelay = (idx % 3) * 0.1 + 's';
+          entry.target.classList.add('visible');
+          gridObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    items.forEach(function(item) {
+      gridObserver.observe(item);
+    });
+  });
+}
+
+// ============================================
+// D-Day Countdown
+// ============================================
+function initCountdown() {
+  var weddingDate = new Date('2026-08-22T14:00:00+09:00');
+
+  function update() {
+    var now = new Date();
+    var diff = weddingDate - now;
+    var timerEl = document.getElementById('countdown-timer');
+    var textEl = document.getElementById('countdown-text');
+    if (!timerEl || !textEl) return;
+
+    if (diff <= 0) {
+      timerEl.textContent = '';
+      textEl.textContent = '현웅 ♥ 세은의 결혼식이 시작되었습니다.';
+      return;
+    }
+
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    timerEl.innerHTML = '<span class="cd-num">' + days + '</span><span class="cd-colon">:</span><span class="cd-num">' + String(hours).padStart(2,'0') + '</span><span class="cd-colon">:</span><span class="cd-num">' + String(minutes).padStart(2,'0') + '</span><span class="cd-colon">:</span><span class="cd-num">' + String(seconds).padStart(2,'0') + '</span>';
+    textEl.innerHTML = '현웅, 세은의 결혼식이 <span class="cd-highlight">' + days + '일</span> 남았습니다.';
+  }
+
+  update();
+  setInterval(update, 1000);
 }
 
 // ============================================

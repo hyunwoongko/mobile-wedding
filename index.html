@@ -31,11 +31,11 @@
     <div class="cover">
       <img src="images/cover.jpg" alt="" class="cover-photo">
       <div class="cover-overlay">
-        <div class="cover-top">
+        <div class="cover-top cover-anim" style="animation-delay:0.3s">
           <p class="cover-invited">YOU'RE INVITED TO</p>
           <p class="cover-title">Our Wedding</p>
         </div>
-        <div class="cover-names">
+        <div class="cover-names cover-anim" style="animation-delay:0.8s">
           <div class="cover-name-col">
             <span class="cover-role">신랑</span>
             <span class="cover-name">고현웅</span>
@@ -45,7 +45,7 @@
             <span class="cover-name">박세은</span>
           </div>
         </div>
-        <div class="cover-bottom">
+        <div class="cover-bottom cover-anim" style="animation-delay:1.3s">
           <p class="cover-date">2026.08.22 SAT 02:00PM</p>
           <p class="cover-venue">at. Le Vire Moire</p>
         </div>
@@ -56,7 +56,7 @@
     <div class="spacer" style="height:80px"></div>
 
     <!-- Greeting text (image) -->
-    <div class="img-center greeting-wrap">
+    <div class="img-center greeting-wrap anim">
       <img src="assets/handwriting_senny.png" alt="" class="img-orgsize greeting-img">
     </div>
 
@@ -64,7 +64,7 @@
     <div class="spacer" style="height:120px"></div>
 
     <!-- 갤러리 badge -->
-    <div class="img-center">
+    <div class="img-center anim">
       <svg class="badge-std" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="180" cy="60" rx="175" ry="56" fill="#b5c26a"/>
         <ellipse cx="180" cy="60" rx="158" ry="46" fill="none" stroke="#5a6e2e" stroke-width="1.5" stroke-dasharray="5,3"/>
@@ -75,7 +75,7 @@
     <div class="spacer" style="height:30px"></div>
 
     <!-- Video -->
-    <div class="video-area">
+    <div class="video-area anim">
       <div class="video-wrap">
         <iframe width="100%" height="270" src="https://www.youtube.com/embed/8_SPFgmSVUo?mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video-iframe"></iframe>
       </div>
@@ -88,7 +88,7 @@
        ============================================= -->
   <section class="sec-photos">
 
-    <div class="photo-grid">
+    <div class="photo-grid anim-stagger">
       <div class="gi"><img src="images/wedding_01.jpg" alt="" data-full="images/wedding_01.jpg"></div>
       <div class="gi"><img src="images/wedding_02.jpg" alt="" data-full="images/wedding_02.jpg"></div>
       <div class="gi"><img src="images/wedding_03.jpg" alt="" data-full="images/wedding_03.jpg"></div>
@@ -110,7 +110,7 @@
     </div>
 
     <!-- Calendar -->
-    <div class="calendar-wrap">
+    <div class="calendar-wrap anim fade-only">
       <div class="calendar-header">
         <p class="cal-date">2026.08.22. SAT</p>
         <p class="cal-time">2:00PM</p>
@@ -123,6 +123,16 @@
         </thead>
         <tbody id="cal-body"></tbody>
       </table>
+
+      <!-- D-Day Countdown -->
+      <div class="countdown-wrap">
+        <hr class="countdown-divider">
+        <div class="countdown-labels">
+          <span>DAYS</span><span></span><span>HOUR</span><span></span><span>MIN</span><span></span><span>SEC</span>
+        </div>
+        <div class="countdown-timer" id="countdown-timer"></div>
+        <p class="countdown-text" id="countdown-text"></p>
+      </div>
     </div>
 
   </section>
@@ -136,7 +146,7 @@
     <div class="spacer" style="height:30px"></div>
 
     <!-- 오시는 길 badge -->
-    <div class="img-center">
+    <div class="img-center anim">
       <svg class="badge-loc" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="180" cy="60" rx="175" ry="56" fill="#b5c26a"/>
         <ellipse cx="180" cy="60" rx="158" ry="46" fill="none" stroke="#5a6e2e" stroke-width="1.5" stroke-dasharray="5,3"/>
@@ -148,7 +158,7 @@
     <div class="spacer" style="height:27px"></div>
 
     <!-- Map -->
-    <div class="map-wrap">
+    <div class="map-wrap anim fade-only">
       <iframe id="map-area" src="https://maps.google.com/maps?q=서울시+강남구+테헤란로+406+르비르모어&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
@@ -156,7 +166,7 @@
     <div class="spacer" style="height:5px"></div>
 
     <!-- Address + copy -->
-    <div class="addr-copy">
+    <div class="addr-copy anim">
       <p class="addr-main">서울시 강남구 테헤란로 406 <strong>르비르모어</strong></p>
       <button class="btn-addr-copy" onclick="copyText('서울시 강남구 테헤란로 406 르비르모어')">복사하기</button>
     </div>
@@ -184,7 +194,7 @@
       <div class="transport-item">
         <p class="t-icon">🅿️</p>
         <p class="t-title">주차</p>
-        <p class="t-desc">1주차장 400대, 2주차장 200대 (각 2시간 무료)<br>혼주 양가 합쳐 5대 무료</p>
+        <p class="t-desc">1주차장 400대, 2주차장 200대 (각 2시간 무료)</p>
       </div>
     </div>
 
@@ -192,6 +202,34 @@
     <div class="spacer" style="height:30px"></div>
 
   </section>
+
+  <!-- =============================================
+       SECTION: GUESTBOOK
+       ============================================= -->
+  <section class="sec-guestbook">
+
+    <div class="spacer" style="height:40px"></div>
+
+    <div class="img-center anim">
+      <svg class="badge-std" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="180" cy="60" rx="175" ry="56" fill="#b5c26a"/>
+        <ellipse cx="180" cy="60" rx="158" ry="46" fill="none" stroke="#5a6e2e" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="180" y="70" text-anchor="middle" font-family="'Pretendard', sans-serif" font-size="32" font-weight="700" fill="#000">방명록</text>
+      </svg>
+    </div>
+    <div class="spacer" style="height:10px"></div>
+    <p class="gb-subtitle anim">저희 둘에게 따뜻한 방명록을 남겨주세요</p>
+
+    <div class="guestbook-area anim">
+      <div id="gb-list" class="gb-list"></div>
+      <button class="gb-toggle" id="gb-toggle-btn" onclick="document.getElementById('gb-modal').classList.add('open')">메시지 남기기</button>
+    </div>
+
+    <div class="spacer" style="height:40px"></div>
+
+  </section>
+
+  <div style="height:40px; background:#fff;"></div>
 
   <!-- =============================================
        SECTION 6: ACCOUNT + SHARE + FOOTER (#f9eded)
@@ -202,7 +240,7 @@
     <div class="spacer" style="height:30px"></div>
 
     <!-- 마음 전하실 곳 badge -->
-    <div class="img-center">
+    <div class="img-center anim">
       <svg class="badge-acc" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="180" cy="60" rx="175" ry="56" fill="#b5c26a"/>
         <ellipse cx="180" cy="60" rx="158" ry="46" fill="none" stroke="#5a6e2e" stroke-width="1.5" stroke-dasharray="5,3"/>
@@ -214,7 +252,7 @@
     <div class="spacer" style="height:28px"></div>
 
     <!-- Account numbers -->
-    <div class="account-area">
+    <div class="account-area anim">
       <div class="acc-group">
         <h6 class="acc-title">🤵🏻‍♂️ 신랑측 계좌번호</h6>
         <div class="acc-row">
@@ -257,7 +295,7 @@
 
     <div class="share-footer-wrap">
       <!-- Share buttons -->
-      <div class="share-area">
+      <div class="share-area anim">
         <button class="btn-urlcopy" onclick="copyURL()">청첩장 주소 복사하기</button>
       </div>
 
@@ -265,7 +303,7 @@
       <div class="spacer" style="height:30px"></div>
 
       <!-- Footer -->
-      <div class="footer-text">
+      <div class="footer-text anim fade-only">
         <p>@hyunwoongko</p>
       </div>
 
@@ -280,6 +318,21 @@
 <!-- Toast -->
 <div class="toast" id="toast"></div>
 
+<!-- Guestbook Modal -->
+<div class="gb-modal" id="gb-modal">
+  <div class="gb-modal-content">
+    <button class="gb-modal-close" onclick="document.getElementById('gb-modal').classList.remove('open')">&times;</button>
+    <p class="gb-modal-title">축하 메시지 작성하기</p>
+    <p class="gb-modal-subtitle">저희 둘의 결혼을 함께 축하해 주세요</p>
+    <form id="guestbook-form" class="gb-modal-form">
+      <input type="text" id="gb-name" placeholder="성함을 남겨주세요" maxlength="20" required>
+      <input type="password" id="gb-password" placeholder="비밀번호를 입력해 주세요" maxlength="20" required>
+      <textarea id="gb-message" placeholder="200자 이내로 작성해 주세요" maxlength="200" required></textarea>
+      <button type="submit" class="gb-modal-submit">작성 완료</button>
+    </form>
+  </div>
+</div>
+
 <!-- Image Modal -->
 <div class="img-modal" id="img-modal">
   <button class="img-modal-close" onclick="closeImgModal()">&times;</button>
@@ -288,6 +341,61 @@
 
 <!-- Kakao SDK -->
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" crossorigin="anonymous"></script>
+
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDI5R0nF1loKyihHahgLttlIgcfu8o5YmY",
+    authDomain: "mobile-wedding-58938.firebaseapp.com",
+    projectId: "mobile-wedding-58938",
+    storageBucket: "mobile-wedding-58938.firebasestorage.app",
+    messagingSenderId: "560435304828",
+    appId: "1:560435304828:web:a3b83651595e0bad19ecf9"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Submit
+  document.getElementById('guestbook-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('gb-name').value.trim();
+    const password = document.getElementById('gb-password').value.trim();
+    const message = document.getElementById('gb-message').value.trim();
+    if (!name || !password || !message) return;
+
+    await addDoc(collection(db, 'guestbook'), {
+      name: name,
+      password: password,
+      message: message,
+      createdAt: serverTimestamp()
+    });
+
+    document.getElementById('gb-name').value = '';
+    document.getElementById('gb-password').value = '';
+    document.getElementById('gb-message').value = '';
+    document.getElementById('gb-modal').classList.remove('open');
+  });
+
+  // Listen
+  const q = query(collection(db, 'guestbook'), orderBy('createdAt', 'desc'));
+  onSnapshot(q, (snapshot) => {
+    const list = document.getElementById('gb-list');
+    list.innerHTML = '';
+    snapshot.forEach((doc) => {
+      const d = doc.data();
+      const date = d.createdAt ? new Date(d.createdAt.seconds * 1000) : new Date();
+      const dateStr = date.getFullYear() + '.' + String(date.getMonth()+1).padStart(2,'0') + '.' + String(date.getDate()).padStart(2,'0') + ' ' + String(date.getHours()).padStart(2,'0') + ':' + String(date.getMinutes()).padStart(2,'0');
+      const item = document.createElement('div');
+      item.className = 'gb-item';
+      item.innerHTML = '<p class="gb-item-msg">' + d.message.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</p><div class="gb-item-footer"><span class="gb-item-name">From. ' + d.name.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</span><span class="gb-item-date">' + dateStr + '</span></div>';
+      list.appendChild(item);
+    });
+  });
+</script>
 
 <script src="js/config.js"></script>
 <script src="js/script.js"></script>

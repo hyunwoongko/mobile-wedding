@@ -427,7 +427,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 
 /* --- Calendar --- */
 .calendar-wrap {
-  padding: 40px 28px 50px;
+  padding: 50px 28px 50px;
   background: #e8ebd5;
 }
 .calendar-header {
@@ -485,6 +485,215 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   background: #7a8a45;
   color: #fff;
   font-weight: 600;
+}
+
+/* --- Countdown --- */
+.countdown-wrap {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+.countdown-divider {
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.15);
+  margin: 0 20px 30px;
+}
+.countdown-labels {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #888;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.countdown-labels span {
+  width: 50px;
+  text-align: center;
+}
+.countdown-labels span:empty {
+  width: 16px;
+}
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 20px;
+}
+.cd-num {
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
+  width: 50px;
+  text-align: center;
+}
+.cd-colon {
+  font-size: 28px;
+  font-weight: 400;
+  color: #999;
+  width: 16px;
+  text-align: center;
+}
+.countdown-text {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 15px;
+  color: #333;
+  font-weight: 400;
+}
+.cd-highlight {
+  color: #7a8a45;
+  font-weight: 700;
+}
+
+/* --- Guestbook --- */
+.sec-guestbook {
+  background: #e8ebd5;
+}
+.gb-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #333;
+  margin-bottom: 8px;
+}
+.gb-subtitle {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 13px;
+  text-align: center;
+  color: #888;
+  margin-bottom: 24px;
+}
+.guestbook-area {
+  padding: 0 24px;
+}
+/* Guestbook Modal */
+.gb-modal {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9998;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.gb-modal.open { display: flex; }
+.gb-modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 24px;
+  width: 100%;
+  max-width: 340px;
+  position: relative;
+}
+.gb-modal-close {
+  position: absolute;
+  top: 12px; right: 16px;
+  background: none; border: none;
+  font-size: 22px; color: #999;
+  cursor: pointer;
+}
+.gb-modal-title {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  color: #333;
+  margin-bottom: 6px;
+}
+.gb-modal-subtitle {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 13px;
+  text-align: center;
+  color: #7a8a45;
+  margin-bottom: 24px;
+}
+.gb-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.gb-modal-form input,
+.gb-modal-form textarea {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 14px;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  background: #f9f9f9;
+}
+.gb-modal-form input:focus,
+.gb-modal-form textarea:focus {
+  border-color: #7a8a45;
+}
+.gb-modal-form textarea {
+  height: 100px;
+  resize: none;
+}
+.gb-modal-submit {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px;
+  background: #7a8a45;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+.gb-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.gb-item {
+  padding: 16px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 8px;
+}
+.gb-item-msg {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.gb-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gb-item-name {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #555;
+}
+.gb-item-date {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: #aaa;
+}
+.gb-toggle {
+  display: block;
+  margin: 20px auto 0;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 30px;
+  background: #7a8a45;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 /* ============================================
@@ -671,6 +880,39 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   position: fixed; top: 16px; right: 16px; color: #fff;
   width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.2);
   font-size: 20px; border: none; cursor: pointer; padding: 0; line-height: 36px; text-align: center; z-index: 1;
+}
+
+/* === COVER LOAD ANIMATIONS === */
+@keyframes coverFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.cover-anim {
+  opacity: 0;
+  animation: coverFadeIn 1s ease forwards;
+}
+
+/* === SCROLL ANIMATIONS === */
+.anim {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.anim.fade-only {
+  transform: none;
+}
+.anim.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.anim-stagger .gi {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.anim-stagger .gi.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* === RESPONSIVE === */
