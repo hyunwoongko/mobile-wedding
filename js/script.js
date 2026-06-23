@@ -220,14 +220,26 @@ function initImageModal() {
     thumbEls.push(thumb);
   });
 
+  function getVisibleIndices(idx) {
+    var len = allImages.length;
+    var indices = [];
+    for (var offset = -2; offset <= 2; offset++) {
+      indices.push(((idx + offset) % len + len) % len);
+    }
+    return indices;
+  }
+
   function showImage(idx) {
     if (idx < 0) idx = allImages.length - 1;
     if (idx >= allImages.length) idx = 0;
     currentIdx = idx;
     modalImg.src = allImages[idx].getAttribute('data-full') || allImages[idx].src;
-    thumbEls.forEach((t, i) => {
-      t.classList.toggle('active', i === idx);
-      t.style.display = (i >= idx - 2 && i <= idx + 2) ? '' : 'none';
+    var visible = getVisibleIndices(idx);
+    // Reorder thumbs in wrap
+    thumbsWrap.innerHTML = '';
+    visible.forEach(function(vi) {
+      thumbEls[vi].classList.toggle('active', vi === idx);
+      thumbsWrap.appendChild(thumbEls[vi]);
     });
   }
 
@@ -235,12 +247,7 @@ function initImageModal() {
   allImages.forEach((img, i) => {
     img.addEventListener('click', () => {
       currentIdx = i;
-      modalImg.style.opacity = '1';
-      modalImg.src = allImages[i].getAttribute('data-full') || allImages[i].src;
-      thumbEls.forEach((t, j) => {
-        t.classList.toggle('active', j === i);
-        t.style.display = (j >= i - 2 && j <= i + 2) ? '' : 'none';
-      });
+      showImage(i);
       modal.classList.add('open');
       document.body.style.overflow = 'hidden';
       var bgmBtn = document.getElementById('bgm-btn');
