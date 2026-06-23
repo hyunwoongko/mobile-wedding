@@ -224,11 +224,7 @@ function initImageModal() {
     if (idx < 0) idx = allImages.length - 1;
     if (idx >= allImages.length) idx = 0;
     currentIdx = idx;
-    modalImg.style.opacity = '0';
-    setTimeout(() => {
-      modalImg.src = allImages[idx].getAttribute('data-full') || allImages[idx].src;
-      modalImg.style.opacity = '1';
-    }, 150);
+    modalImg.src = allImages[idx].getAttribute('data-full') || allImages[idx].src;
     thumbEls.forEach((t, i) => {
       t.classList.toggle('active', i === idx);
       t.style.display = (i >= idx - 2 && i <= idx + 2) ? '' : 'none';

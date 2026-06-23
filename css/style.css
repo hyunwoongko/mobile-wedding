@@ -885,11 +885,13 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 }
 .img-modal.open { display: flex; }
 .img-modal-main {
-  max-width: 100vw;
+  width: 100vw;
   max-height: 78vh;
   object-fit: contain;
   user-select: none;
-  transition: opacity 0.3s ease;
+  background: #000;
+  position: relative;
+  z-index: 1;
 }
 .img-modal-thumbs {
   display: flex;
