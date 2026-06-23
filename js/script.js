@@ -201,23 +201,47 @@ function initImageModal() {
   const modal = document.getElementById('img-modal');
   if (!modal) return;
 
-  const modalImg = modal.querySelector('img');
+  const modalImg = document.getElementById('img-modal-main');
+  const thumbsWrap = document.getElementById('img-thumbs');
   const allImages = Array.from(document.querySelectorAll('.photo-grid .gi img'));
   var currentIdx = 0;
+  var thumbEls = [];
+
+  // Build thumbnails
+  allImages.forEach((img, i) => {
+    var thumb = document.createElement('img');
+    thumb.className = 'img-modal-thumb';
+    thumb.src = img.getAttribute('data-full') || img.src;
+    thumb.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showImage(i);
+    });
+    thumbsWrap.appendChild(thumb);
+    thumbEls.push(thumb);
+  });
 
   function showImage(idx) {
     if (idx < 0) idx = allImages.length - 1;
     if (idx >= allImages.length) idx = 0;
     currentIdx = idx;
-    var src = allImages[idx].getAttribute('data-full') || allImages[idx].src;
-    modalImg.src = src;
+    modalImg.style.opacity = '0';
+    setTimeout(() => {
+      modalImg.src = allImages[idx].getAttribute('data-full') || allImages[idx].src;
+      modalImg.style.opacity = '1';
+    }, 150);
+    thumbEls.forEach((t, i) => t.classList.toggle('active', i === idx));
+    // Scroll active thumb into view
+    thumbEls[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
   }
 
   // Gallery grid images
   allImages.forEach((img, i) => {
     img.addEventListener('click', () => {
       currentIdx = i;
-      showImage(i);
+      modalImg.style.opacity = '1';
+      modalImg.src = allImages[i].getAttribute('data-full') || allImages[i].src;
+      thumbEls.forEach((t, j) => t.classList.toggle('active', j === i));
+      thumbEls[i].scrollIntoView({ inline: 'center', block: 'nearest' });
       modal.classList.add('open');
       document.body.style.overflow = 'hidden';
       var bgmBtn = document.getElementById('bgm-btn');
@@ -225,22 +249,12 @@ function initImageModal() {
     });
   });
 
-  // Prev / Next buttons
-  document.getElementById('img-prev').addEventListener('click', (e) => {
-    e.stopPropagation();
-    showImage(currentIdx - 1);
-  });
-  document.getElementById('img-next').addEventListener('click', (e) => {
-    e.stopPropagation();
-    showImage(currentIdx + 1);
-  });
-
   // Swipe support
   var touchStartX = 0;
-  modal.addEventListener('touchstart', (e) => {
+  modalImg.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
   }, { passive: true });
-  modal.addEventListener('touchend', (e) => {
+  modalImg.addEventListener('touchend', (e) => {
     var diff = touchStartX - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 50) {
       if (diff > 0) showImage(currentIdx + 1);
