@@ -88,17 +88,17 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding: 80px 30px 0;
+  justify-content: space-between;
+  padding: min(6vw, 30px) min(6vw, 30px) min(8vw, 40px);
   text-align: center;
   background: linear-gradient(
     to bottom,
     rgba(255,255,255,0.8) 0%,
-    rgba(255,255,255,0.3) 20%,
-    rgba(255,255,255,0.0) 40%,
-    rgba(255,255,255,0.0) 50%,
-    rgba(255,255,255,0.5) 72%,
-    rgba(255,255,255,1.0) 91%
+    rgba(255,255,255,0.3) 15%,
+    rgba(255,255,255,0.0) 30%,
+    rgba(255,255,255,0.0) 55%,
+    rgba(255,255,255,0.5) 75%,
+    rgba(255,255,255,1.0) 93%
   );
 }
 .cover-top {
@@ -108,23 +108,23 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 }
 .cover-invited {
   font-family: 'Lora', serif;
-  font-size: 17px;
+  font-size: min(3vw, 14px);
   font-weight: 300;
   color: #7a8a45;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin-bottom: 18px;
+  margin-bottom: min(1.5vw, 8px);
 }
 .cover-title {
   font-family: 'Great Vibes', cursive;
-  font-size: 72px;
+  font-size: min(12vw, 60px);
   color: #7a8a45;
   letter-spacing: 2px;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 .cover-names {
   display: flex;
-  gap: 50px;
+  gap: min(12vw, 50px);
   margin-top: auto;
 }
 .cover-name-col {
@@ -135,13 +135,13 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 }
 .cover-role {
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
+  font-size: min(2.8vw, 11px);
   color: rgba(0,0,0,0.4);
   letter-spacing: 1px;
 }
 .cover-name {
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: min(5vw, 20px);
   color: #000;
   letter-spacing: 1px;
   font-weight: 500;
@@ -151,20 +151,19 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   flex-direction: column;
   align-items: center;
   line-height: 1.3;
-  margin-top: 16px;
-  margin-bottom: 40px;
+  margin-top: min(3vw, 16px);
 }
 .cover-date {
   font-family: 'Lora', serif;
-  font-size: 14px;
+  font-size: min(3.2vw, 14px);
   color: #7a8a45;
   letter-spacing: 1px;
-  margin-bottom: 4px;
+  margin-bottom: min(1vw, 4px);
   font-weight: 300;
 }
 .cover-venue {
   font-family: 'Lora', serif;
-  font-size: 22px;
+  font-size: min(5vw, 22px);
   color: #7a8a45;
   letter-spacing: 0.5px;
   font-weight: 300;
@@ -880,13 +879,11 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 
 /* === IMAGE MODAL === */
 .img-modal {
-  position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+  position: fixed; inset: 0; background: #000;
   z-index: 9998; display: none; align-items: center; justify-content: center;
-}
-.img-modal.open { display: flex; }
-.img-modal {
   flex-direction: column;
 }
+.img-modal.open { display: flex; }
 .img-modal-main {
   max-width: 100vw;
   max-height: 78vh;
