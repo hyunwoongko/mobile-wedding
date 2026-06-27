@@ -283,6 +283,45 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   filter: invert(1);
 }
 
+/* --- Intro (신랑 신부 소개) --- */
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 24px;
+  align-items: center;
+}
+.intro-card {
+  text-align: center;
+  width: 100%;
+  max-width: 340px;
+}
+.intro-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 14px;
+}
+.intro-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.intro-parents {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 15px;
+  color: #888;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+.intro-name {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 20px;
+  color: #000;
+  font-weight: 700;
+}
+
 /* --- Groom / Bride (Cormorant Garamond) --- */
 .groom-bride {
   text-align: center;
@@ -486,6 +525,22 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   background: #7a8a45;
   color: #fff;
   font-weight: 600;
+}
+
+/* --- Notice (안내 사항) --- */
+.sec-notice {
+  background: #e8ebd5;
+}
+.notice-content {
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.notice-card {
+  background: rgba(255,255,255,0.7);
+  border-radius: 12px;
+  padding: 20px;
 }
 
 /* --- Countdown --- */
@@ -730,7 +785,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   padding: 16px 24px;
 }
 .addr-main {
-  font-size: 14px;
+  font-size: 13px;
   color: #333;
   font-weight: 300;
   margin-bottom: 16px;
@@ -769,7 +824,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   margin-bottom: 4px;
 }
 .t-desc {
-  font-size: 14px;
+  font-size: 13px;
   color: #444;
   line-height: 1.9;
   font-weight: 300;
@@ -809,7 +864,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 .acc-row:last-child { margin-bottom: 0; }
 .acc-info { display: flex; flex-direction: column; gap: 2px; }
 .acc-num {
-  font-size: 15px;
+  font-size: 13px;
   color: #000;
   font-weight: 400;
 }
