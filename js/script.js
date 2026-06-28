@@ -119,6 +119,32 @@ function showToast(msg) {
 }
 
 // ============================================
+// Envelope open
+// ============================================
+var letterSound = new Audio('music/letter.mp3');
+
+function openEnvelope() {
+  var greeting = document.getElementById('greeting-area');
+  var seal = document.querySelector('.envelope-seal');
+  if (greeting.classList.contains('open')) return;
+  letterSound.currentTime = 0;
+  letterSound.play();
+  var label = document.getElementById('envelope-label');
+  if (label) label.style.visibility = 'hidden';
+  {
+    if (seal) seal.classList.add('peel');
+    setTimeout(function() {
+      greeting.style.maxHeight = greeting.scrollHeight + 'px';
+      greeting.classList.add('open');
+      greeting.addEventListener('transitionend', function handler() {
+        greeting.style.maxHeight = 'none';
+        greeting.removeEventListener('transitionend', handler);
+      });
+    }, 400);
+  }
+}
+
+// ============================================
 // Scroll Animations
 // ============================================
 function initScrollAnimations() {

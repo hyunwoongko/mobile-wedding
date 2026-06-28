@@ -56,6 +56,6 @@ const CONFIG = {
 
   music: {
     enabled: true,
-    src: "assets/bgm.mp3",
+    src: "music/bgm.mp3",
   },
 };

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+<style>
+body { background: #222; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+.locket {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  background: #e5556f;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* 부직포 질감 */
+.locket::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-conic-gradient(rgba(0,0,0,0.03) 0% 25%, transparent 0% 50%) 0 0 / 3px 3px,
+    repeating-conic-gradient(rgba(255,255,255,0.04) 0% 25%, transparent 0% 50%) 1px 1px / 3px 3px;
+  filter: url(#hanji);
+  opacity: 1;
+  z-index: 1;
+  pointer-events: none;
+}
+/* 하트 모양 사진 */
+.heart-photo {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  mask: url(#heart-mask);
+  -webkit-mask: url(#heart-mask);
+  overflow: hidden;
+}
+.heart-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(1) hue-rotate(310deg) saturate(2) brightness(0.9);
+}
+/* 글씨 */
+.locket-text {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  margin-top: 5px;
+}
+.locket-invited {
+  font-family: 'Marck Script', cursive;
+  font-size: 28px;
+  color: #000;
+  line-height: 0.9;
+  letter-spacing: 2px;
+  paint-order: stroke fill;
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <mask id="heart-mask">
+    <rect width="100%" height="100%" fill="black"/>
+    <polygon points="
+      120,200
+      140,196
+      156,185
+      190,151
+      212,123
+      225,93
+      228,65
+      222,42
+      210,25
+      192,14
+      172,12
+      152,19
+      135,33
+      120,52
+      105,33
+      88,19
+      68,12
+      48,14
+      30,25
+      18,42
+      12,65
+      15,93
+      28,123
+      50,151
+      85,185
+      100,196
+    " fill="white" filter="url(#feather)"/>
+  </mask>
+  <filter id="feather">
+    <feGaussianBlur stdDeviation="5"/>
+  </filter>
+  <filter id="hanji" x="0" y="0" width="100%" height="100%">
+    <!-- 가로로 긴 섬유질 -->
+    <feTurbulence type="fractalNoise" baseFrequency="0.02 0.15" numOctaves="5" seed="7" result="fiber1"/>
+    <!-- 세로 방향 섬유질 -->
+    <feTurbulence type="fractalNoise" baseFrequency="0.12 0.03" numOctaves="4" seed="12" result="fiber2"/>
+    <!-- 합치기 -->
+    <feMerge result="fibers">
+      <feMergeNode in="fiber1"/>
+      <feMergeNode in="fiber2"/>
+    </feMerge>
+    <!-- 밝기/대비 조정 -->
+    <feColorMatrix type="saturate" values="0" in="fibers" result="gray"/>
+    <feComponentTransfer in="gray" result="contrast">
+      <feFuncR type="linear" slope="3" intercept="-0.5"/>
+      <feFuncG type="linear" slope="3" intercept="-0.5"/>
+      <feFuncB type="linear" slope="3" intercept="-0.5"/>
+      <feFuncA type="linear" slope="0.25"/>
+    </feComponentTransfer>
+    <!-- 원본 위에 overlay -->
+    <feBlend in="contrast" in2="SourceGraphic" mode="overlay"/>
+  </filter>
+</svg>
+<div class="locket">
+  <div class="heart-photo">
+    <img src="../images/locket_background.jpeg" alt="">
+  </div>
+  <div class="locket-text">
+    <span class="locket-invited" style="font-size:23px;">from. hyunwoong &amp; seeun</span>
+  </div>
+</div>
+</body>
+</html>

@@ -200,14 +200,57 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   letter-spacing: 0.5px;
 }
 
-/* --- Envelope --- */
+/* --- Paper texture area --- */
+.paper-area {
+  position: relative;
+  background: #f8f7f5;
+}
+.paper-area::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #f8f7f5;
+  filter: url(#paper-texture);
+  pointer-events: none;
+  z-index: 0;
+}
+.paper-area > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Envelope + Greeting interaction --- */
+.envelope-greeting {
+  width: 95%;
+  margin: 0 auto;
+}
 .envelope-wrap {
-  padding: 0 50px;
+  cursor: pointer;
 }
 .envelope {
   position: relative;
   background: #888580;
-  padding: 40px 24px 24px;
+  padding: 0;
+  overflow: visible;
+  aspect-ratio: 3.5/2;
+}
+.envelope-seal {
+  position: absolute;
+  top: 12%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 50%;
+  height: fit-content;
+  z-index: 2;
+  filter: drop-shadow(2px 3px 4px rgba(0,0,0,0.15));
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.3, 1), opacity 1s ease;
+  transform-origin: center center;
+}
+.envelope-seal.peel {
+  transform: translateX(120%) translateY(-80%) rotate(40deg) scale(0.6);
+  opacity: 0;
   text-align: center;
   overflow: hidden;
 }
@@ -255,14 +298,6 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   letter-spacing: 1px;
   line-height: 1.2;
 }
-.env-day {
-  font-family: 'Lora', serif;
-  font-size: 11px;
-  font-weight: 300;
-  color: #333;
-  letter-spacing: 1px;
-  line-height: 1.2;
-}
 .env-venue1 {
   font-family: 'Lora', serif;
   font-size: 11px;
@@ -271,6 +306,53 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   letter-spacing: 0.5px;
   line-height: 1.5;
 }
+.sticker-combo {
+  text-align: center;
+  padding: 5%;
+  position: relative;
+}
+.sticker-top-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: -80px;
+  position: relative;
+  z-index: 2;
+}
+.sticker-heart {
+  width: 50%;
+  transform: rotate(-10deg);
+  margin-right: -20px;
+}
+.sticker-tag {
+  width: 40%;
+  transform: rotate(15deg);
+  margin-left: -20px;
+}
+.sticker-locket {
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+  mask-composite: intersect;
+}
+.greeting-inner {
+  position: relative;
+  padding: 0;
+}
+.greeting-hidden {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease;
+}
+.greeting-hidden.open {
+  max-height: none;
+}
 
 /* --- Greeting image --- */
 .greeting-wrap {
@@ -278,9 +360,9 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 }
 .greeting-img {
   display: block;
-  width: 94% !important;
+  width: 90% !important;
   max-width: none !important;
-  margin: 15% auto;
+  margin: 0 auto;
   filter: invert(1);
 }
 
