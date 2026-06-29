@@ -232,7 +232,8 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   background: #888580;
   padding: 0;
   overflow: visible;
-  aspect-ratio: 3.5/2;
+  height: 0;
+  padding-bottom: 50%;
 }
 .envelope-seal {
   position: absolute;
@@ -261,10 +262,6 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   height: 100%;
   pointer-events: none;
   z-index: 0;
-}
-.envelope > *:not(.envelope-svg) {
-  position: relative;
-  z-index: 1;
 }
 .env-invited {
   font-family: 'Lora', serif;
