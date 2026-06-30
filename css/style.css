@@ -1013,7 +1013,7 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 
 /* === IMAGE MODAL === */
 .img-modal {
-  position: fixed; inset: 0; background: #000;
+  position: fixed; inset: 0; background: #fff;
   z-index: 9998; display: none; align-items: center; justify-content: center;
   flex-direction: column;
 }
@@ -1023,17 +1023,20 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
   max-height: 78vh;
   object-fit: contain;
   user-select: none;
-  background: #000;
+  background: #fff;
   position: relative;
   z-index: 1;
 }
 .img-modal-thumbs {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
+  justify-content: center;
   gap: 6px;
-  padding: 12px 16px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  flex-shrink: 0;
+  padding: 16px;
+  background: #fff;
 }
 .img-modal-thumb {
   width: 48px;
@@ -1048,11 +1051,11 @@ button { border: none; cursor: pointer; font-family: inherit; background: none; 
 }
 .img-modal-thumb.active {
   opacity: 1;
-  border-color: #fff;
+  border-color: #333;
 }
 .img-modal-close {
-  position: fixed; top: 16px; right: 16px; color: #fff;
-  width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.2);
+  position: fixed; top: 16px; right: 16px; color: #333;
+  width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,0.08);
   font-size: 20px; border: none; cursor: pointer; padding: 0; line-height: 36px; text-align: center; z-index: 1;
 }
 
